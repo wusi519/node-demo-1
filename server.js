@@ -24,9 +24,18 @@ var server = http.createServer(function (request, response) {
     if (path === '/') {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
-        response.write(`因为你还没有学习AJAX所以什么都没有`)
+        response.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <h1>因为你还没有学习AJAX所以什么都没有</h1>
+        </body>
+        </html>`)
         response.end()
-    } else if (path === '/css') {
+    } else if (path === '/style.css') {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/css;charset=utf-8')
         response.write(`body{color: red;}`)
